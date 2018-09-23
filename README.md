@@ -19,9 +19,9 @@ It also supports a *print* macro, that "prints" an 8-bit integer by writing it t
 
 The project consists of a single file of Java sourcecode, accompanied by three example files:
 
-* [loop.py](), a piece of Python code describing a simple loop.
-* [loop-pseudo.vm](), a file containing pseudo VM code. Please note that most comments will be lost in translation.
-* [loop-sane.vm](), a file showcasing what the translated code from *loop-pseudo.vm* will look like. Please note that the file has been manually edited with comments to match the comments from *loop-pseudo.vm*.
+* [loop.py](loop.py), a piece of Python code describing a simple loop.
+* [loop-pseudo.vm](loop-pseudo.vm), a file containing pseudo VM code. Please note that most comments will be lost in translation.
+* [loop-sane.vm](loop-sane.vm), a file showcasing what the translated code from *loop-pseudo.vm* will look like. Please note that the file has been manually edited with comments to match the comments from *loop-pseudo.vm*.
 
 ## How to build
 
