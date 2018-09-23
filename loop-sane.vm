@@ -1,0 +1,23 @@
+  push constant 0	// load 0
+  pop static 0		// let a = 0, a is the first variable
+  push constant 0	// load 0
+  pop static 1		// let b = 0, b is the second variable
+label enterLoop1	// loop start
+  push a		// load a
+  push 10		// load 10
+  sub			// a - 10, when a = 10, we will stop looping
+  push 0		// load 0
+  eq			// 0 = 0, or a - 10 = 0
+  if-goto exitLoop1	// stop looping
+  push static 0		// load a
+  push static 1		// load b
+  add			// b + a
+  pop static 1		// let b = b + a
+  push static 0		// load a
+  push constant 1	// load 1
+  add			// a + 1
+  pop static 0		// let a = a + 1
+  goto enterLoop1	// contintue looping
+label exitLoop1		// end loop
+  push static 1		// load b
+  pop that 16384	// print b (16384 represents the 8 first pixels)

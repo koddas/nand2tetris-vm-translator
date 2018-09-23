@@ -1,0 +1,22 @@
+  push 0		// load 0
+  pop a			// let a = 0, a is the first variable
+  push 0		// load 0
+  pop b			// let b = 0, b is the second variable
+label enterLoop1	// loop start
+  push a		// load a
+  push 10		// load 10
+  sub			// a - 10, when a = 10, we will stop looping
+  push 0		// load 0
+  eq			// 0 = 0, or a - 10 = 0
+  if-goto exitLoop1	// stop looping
+  push a		// load a
+  push b		// load b
+  add			// b + a
+  pop b			// let b = b + a
+  push a		// load a
+  push 1		// load 1
+  add			// a + 1
+  pop a			// let a = a + 1
+  goto enterLoop1	// contintue looping
+label exitLoop1		// end loop
+  print b		// print b
