@@ -77,7 +77,11 @@ public class Translator {
 				translated = translatePop(chunks);
 				break;
 			case "print":
-				translated = translatePrint(chunks[1]);
+				if (chunks.length == 1 || chunks[1].equals("//")) {
+					translated = translatePrint();
+				} else {
+					translated = translatePrint(chunks[1]);
+				}
 				break;
 			default:
 				translated = line;
@@ -121,9 +125,19 @@ public class Translator {
 			print += "constant " + chunk + "\n";
 		}
 
-		print += "  pop that 16384";
+		print += translatePrint();
 
 		return print;
+	}
+
+	/**
+	 * Translates a print statement by popping the last value on the stack
+	 * to the first address of the Hack computer's video memory.
+	 *
+	 * @return A translated line.
+	 */
+	private String translatePrint() {
+		return "  pop that 16384";
 	}
 
 	/**

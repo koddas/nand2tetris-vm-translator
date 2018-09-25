@@ -12,6 +12,7 @@ The program converts *push/pop* commands as follows:
 
 It also supports a *print* macro, that "prints" an 8-bit integer by writing it to the first word in the graphics memory. It translates as follows:
 
+* **print** -> **pop that 16384**, writes the last element on the stack to the graphics memory
 * **print *c*** -> **push constant *c*, pop that 16384**, where *c* is a constant, and
 * **print *x*** -> **push static *n*, pop that 16384**, where *x* is a variable name and n is a memory address.
 
