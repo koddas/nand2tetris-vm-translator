@@ -66,6 +66,9 @@ public class Translator {
 	 * @return A translated line.
 	 */
 	private String translateLine(String line) {
+		if (line.contains("//")) {
+			line = line.substring(0, line.indexOf("//"));
+		}
 		String[] chunks = line.trim().split(" ");
 		String translated = null;
 
@@ -77,7 +80,7 @@ public class Translator {
 				translated = translatePop(chunks);
 				break;
 			case "print":
-				if (chunks.length == 1 || chunks[1].equals("//")) {
+				if (chunks.length == 1) {
 					translated = translatePrint();
 				} else {
 					translated = translatePrint(chunks[1]);
